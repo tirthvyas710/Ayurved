@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>AyurVeda – Authentic Ayurvedic Products</title>
-  <meta name="description" content="100% natural Ayurvedic herbs, oils, and supplements. Cart, Stripe checkout, email confirmation.">
+  <title>Natural Datan – Authentic Ayurvedic Products | ₹199 Store</title>
+  <meta name="description" content="100% natural Ayurvedic herbs, oils, and supplements. All products at ₹199. Cart, checkout, email confirmation.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -39,7 +39,6 @@
       100% { transform: translateY(0px); }
     }
     
-    /* Fade-up scroll reveal */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -50,7 +49,6 @@
       transform: translateY(0);
     }
     
-    /* Card hover effects */
     .product-card {
       transition: all 0.3s ease;
       will-change: transform;
@@ -66,7 +64,6 @@
       transition: transform 0.5s ease;
     }
     
-    /* Button hover & press */
     .btn-organic {
       transition: all 0.2s ease;
       position: relative;
@@ -94,17 +91,14 @@
       transition: 0s;
     }
     
-    /* Interactive cart badge */
     .cart-badge-pulse {
       animation: badgeBounce 0.3s ease-in-out;
     }
     
-    /* Hero overlay text animation */
     .hero-text {
       animation: fadeInScale 1s ease-out forwards;
     }
     
-    /* Nav link hover effect */
     .nav-link {
       position: relative;
       transition: color 0.2s;
@@ -123,7 +117,6 @@
       width: 100%;
     }
     
-    /* Toast enhanced */
     #customToast {
       backdrop-filter: blur(8px);
       background: rgba(30, 30, 30, 0.9);
@@ -132,24 +125,16 @@
       animation: fadeInUp 0.3s ease-out;
     }
     
-    /* Image loading subtle */
-    img {
-      transition: opacity 0.3s;
-    }
-    
-    /* Cart item remove animation */
     .cart-item-removing {
       opacity: 0;
       transform: translateX(20px);
       transition: all 0.2s ease;
     }
     
-    /* Main content fade transition */
     #app {
       animation: fadeInScale 0.4s ease-out;
     }
     
-    /* Floating effect for feature icons */
     .float-icon {
       transition: transform 0.3s ease;
     }
@@ -157,12 +142,6 @@
       transform: translateY(-5px);
     }
     
-    /* Hero parallax subtle movement */
-    .hero-bg {
-      transition: transform 0.1s ease-out;
-    }
-
-    /* Benefits list styling */
     .benefits-list {
       list-style: none;
       padding-left: 0;
@@ -187,7 +166,7 @@
 <nav class="sticky top-0 z-50 bg-black/40 backdrop-blur-md shadow-md transition-all duration-300">
   <div class="container mx-auto px-4 py-3 flex justify-between items-center flex-wrap gap-2">
     <a href="#" data-nav="home" class="flex items-center space-x-2 group">
-      <span class="text-2xl font-bold text-white hover:text-[#d4e6a3] transition duration-300 group-hover:scale-105 inline-block">AyurVeda</span>
+      <span class="text-2xl font-bold text-white hover:text-[#d4e6a3] transition duration-300 group-hover:scale-105 inline-block">Natural Datan</span>
     </a>
     <div class="flex items-center space-x-6">
       <a href="#" data-nav="home" class="nav-link text-white hover:text-[#d4e6a3] transition">Home</a>
@@ -204,16 +183,16 @@
   <main id="app" class="min-h-[70vh]"></main>
 
   <footer class="bg-[#6B8E23] text-white text-center py-4 mt-12">
-    <p>&copy; 2025 Ayurvedic Wellness. Nature's path to holistic health.</p>
+    <p>© 2025 Ayurvedic Wellness. Nature's path to holistic health | All products at ₹199 only</p>
   </footer>
 
   <script>
-    // ==================== PRODUCT DATA with BENEFITS (only visible on detail page) ====================
+    // ==================== PRODUCT DATA — ALL PRICES NOW ₹199 ====================
     const PRODUCTS = [
       { 
         id: 1, 
         name: "Neem Datun Sticks", 
-        price: 24.99, 
+        price: 199,        // ₹199
         description: "known for its strong antibacterial and healing properties. Used for centuries in daily hygiene routines, it helps maintain oral health naturally without chemicals.", 
         image: "/Ayurved/image/neem.jpeg",
         benefits: [
@@ -227,13 +206,13 @@
       { 
         id: 2, 
         name: "Miswak Datun Sticks", 
-        price: 18.99, 
+        price: 199,        // ₹199
         description: "known for its gentle cleansing and refreshing properties. It offers a clean, modern alternative to chemical-based oral care products.", 
         image: "/Ayurved/image/miswak.jpeg",
         benefits: [
           "Naturally cleans teeth → removes food particles and buildup",
           "Improves breath freshness → long-lasting clean feel",
-          " Gentle on gums → suitable for sensitive users",
+          "Gentle on gums → suitable for sensitive users",
           "Contains natural fluoride-like compounds → supports enamel health",
           "Convenient & portable → no toothpaste required"
         ]
@@ -241,7 +220,7 @@
       { 
         id: 3, 
         name: "Babool Datun Sticks", 
-        price: 29.99, 
+        price: 199,        // ₹199
         description: "known for its astringent properties that help tighten gums and improve oral strength. It provides a balanced and gentle cleaning experience while reinforcing gum health.", 
         image: "/Ayurved/image/babool.jpeg",
         benefits: [
@@ -254,19 +233,38 @@
       }
     ];
 
-    // ==================== CART LOGIC ====================
+    // ==================== CART LOGIC (with ₹199 price sync) ====================
     const CART_KEY = 'ayurveda_cart';
 
     function getCart() { return localStorage.getItem(CART_KEY) ? JSON.parse(localStorage.getItem(CART_KEY)) : []; }
     function saveCart(cart) { localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartBadge(true); if (currentPage === 'cart') renderPage(); }
     
+    // Ensure cart prices always reflect current PRODUCTS prices (₹199) – migration helper
+    function syncCartWithProductPrices() {
+      let cart = getCart();
+      let changed = false;
+      const updatedCart = cart.map(item => {
+        const masterProduct = PRODUCTS.find(p => p.id === item.id);
+        if (masterProduct && masterProduct.price !== item.price) {
+          changed = true;
+          return { ...item, price: masterProduct.price };
+        }
+        return item;
+      });
+      if (changed) {
+        saveCart(updatedCart);
+        if (currentPage === 'cart') renderPage();
+        else updateCartBadge();
+      }
+    }
+
     function addToCart(product) {
       const cart = getCart();
       const existing = cart.find(item => item.id === product.id);
       if (existing) existing.quantity += 1;
-      else cart.push({ ...product, quantity: 1 });
+      else cart.push({ ...product, quantity: 1, price: 199 }); // force ₹199
       saveCart(cart);
-      showToast(`✨ ${product.name} added to cart`);
+      showToast(`✨ ${product.name} added to cart (₹199)`);
     }
 
     function removeFromCart(productId) { let cart = getCart(); cart = cart.filter(item => item.id !== productId); saveCart(cart); }
@@ -323,7 +321,6 @@
     function renderPage() {
       const app = document.getElementById('app');
       if (!app) return;
-      // reset animation fade
       app.style.animation = 'none';
       setTimeout(() => app.style.animation = 'fadeInScale 0.4s ease-out', 10);
       
@@ -347,7 +344,6 @@
       initScrollReveal();
     }
 
-    // Scroll reveal observer
     function initScrollReveal() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -360,20 +356,19 @@
       document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
     }
 
-    // ==================== HOME PAGE ====================
+    // ==================== HOME PAGE (₹199 pricing) ====================
     function renderHome() {
       const featured = PRODUCTS.slice(0, 3);
       return `
         <section class="relative h-screen flex items-center justify-center overflow-hidden">
           <div class="absolute inset-0 hero-bg bg-[url('image/bg.jpeg')] bg-cover bg-center scale-105 transition-transform duration-10000"></div>
           <div class="absolute inset-0 bg-black/40"></div>
-         
         </section>
 
         <section class="py-16 bg-white fade-up">
           <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Featured Products</h2>
-            <p class="text-center text-gray-600 mb-12">Handpicked for your wellness journey</p>
+            <p class="text-center text-gray-600 mb-12">All pure Ayurvedic essentials at just ₹199</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               ${featured.map(p => `
                 <div class="bg-white rounded-2xl shadow-md overflow-hidden product-card transition-all duration-300 cursor-pointer">
@@ -382,7 +377,7 @@
                     <h3 class="text-xl font-semibold">${p.name}</h3>
                     <p class="text-sm text-gray-600 mb-2 line-clamp-2">${p.description}</p>
                     <div class="flex justify-between items-center mt-3">
-                      <span class="text-2xl font-bold text-[#6B8E23]">$${p.price.toFixed(2)}</span>
+                      <span class="text-2xl font-bold text-[#6B8E23]">₹${p.price}</span>
                       <button data-id="${p.id}" class="view-product-btn bg-gray-100 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200 transition-all hover:scale-105">Details</button>
                     </div>
                   </div>
@@ -401,7 +396,7 @@
             <div class="grid md:grid-cols-3 gap-8">
               <div class="text-center p-6 rounded-2xl feature-card transition-all hover:bg-white/60 duration-300"><div class="float-icon inline-block p-3 bg-[#6B8E23]/10 rounded-full mb-4 transition-all"><svg class="h-8 w-8 text-[#6B8E23]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div><h3 class="text-xl font-semibold mb-2">100% Organic</h3><p class="text-gray-600">organic ingredients from sustainable farms</p></div>
               <div class="text-center p-6 rounded-2xl feature-card transition-all hover:bg-white/60 duration-300"><div class="float-icon inline-block p-3 bg-[#6B8E23]/10 rounded-full mb-4"><svg class="h-8 w-8 text-[#6B8E23]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><h3 class="text-xl font-semibold mb-2">Traditional Formulations</h3><p class="text-gray-600">Authentic recipes passed down for generations</p></div>
-              <div class="text-center p-6 rounded-2xl feature-card transition-all hover:bg-white/60 duration-300"><div class="float-icon inline-block p-3 bg-[#6B8E23]/10 rounded-full mb-4"><svg class="h-8 w-8 text-[#6B8E23]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div><h3 class="text-xl font-semibold mb-2">Chemical-Free & Safe Formulation</h3><p class="text-gray-600">Free from harsh chemicals, artificial additives, and synthetic preservatives.</p></div>
+              <div class="text-center p-6 rounded-2xl feature-card transition-all hover:bg-white/60 duration-300"><div class="float-icon inline-block p-3 bg-[#6B8E23]/10 rounded-full mb-4"><svg class="h-8 w-8 text-[#6B8E23]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div><h3 class="text-xl font-semibold mb-2">Chemical-Free & Safe</h3><p class="text-gray-600">Free from harsh chemicals, artificial additives, and synthetic preservatives.</p></div>
             </div>
           </div>
         </section>
@@ -414,9 +409,8 @@
       });
     }
 
-    // ==================== PRODUCT DETAIL (with Benefits section) ====================
+    // ==================== PRODUCT DETAIL (with Benefits, ₹199) ====================
     function renderProductDetail(product) {
-      // Build benefits HTML only if benefits exist
       const benefitsHtml = product.benefits && product.benefits.length 
         ? `
           <div class="mt-6 pt-4 border-t border-gray-100 fade-up">
@@ -424,7 +418,7 @@
               <span class="text-[#6B8E23] text-2xl">✨</span> Key Benefits
             </h3>
             <ul class="benefits-list space-y-2">
-              ${product.benefits.map(b => `<li class="text-gray-700"><span class="text-[#6B8E23] mr-0"></span> ${b.replace(/^[🌱💪🧠⚡😴🔄🧹👁️🛡️🔥💆‍♀️✨🧘🌿💤]/g, '').trim()}</li>`).join('')}
+              ${product.benefits.map(b => `<li class="text-gray-700">${b.replace(/^[🌱💪🧠⚡😴🔄🧹👁️🛡️🔥💆‍♀️✨🧘🌿💤]/g, '').trim()}</li>`).join('')}
             </ul>
           </div>
         ` : '';
@@ -436,11 +430,11 @@
               <div class="md:w-1/2 overflow-hidden"><img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"></div>
               <div class="md:w-1/2 p-6 md:p-8">
                 <h1 class="text-3xl font-bold text-gray-800 mb-2">${product.name}</h1>
-                <p class="text-2xl font-bold text-[#6B8E23] mb-4">$${product.price.toFixed(2)}</p>
+                <p class="text-2xl font-bold text-[#6B8E23] mb-4">₹${product.price}</p>
                 <p class="text-gray-600 mb-6 leading-relaxed">${product.description}</p>
                 ${benefitsHtml}
                 <div class="flex items-center gap-4 mt-6">
-                  <button id="addToCartDetail" class="btn-organic bg-[#6B8E23] text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition flex-1 hover:shadow-md">Add to Cart 🌿</button>
+                  <button id="addToCartDetail" class="btn-organic bg-[#6B8E23] text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition flex-1 hover:shadow-md">Add to Cart 🌿 (₹199)</button>
                   <button data-nav="cart" class="border-2 border-[#6B8E23] text-[#6B8E23] px-6 py-3 rounded-lg font-semibold hover:bg-[#6B8E23] hover:text-white transition-all hover:scale-105">Go to Cart</button>
                 </div>
               </div>
@@ -455,13 +449,13 @@
       if (addBtn) addBtn.addEventListener('click', () => { addToCart(product); addBtn.classList.add('scale-95'); setTimeout(() => addBtn.classList.remove('scale-95'), 150); });
     }
 
-    // ==================== PRODUCT LIST PAGE ====================
+    // ==================== PRODUCT LIST PAGE (₹199 everywhere) ====================
     function renderProducts() {
       return `
         <div class="container mx-auto px-4 py-8">
           <div class="text-center mb-12 fade-up">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">Our Complete Collection</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto">Discover nature's healing power with our carefully curated range of authentic Ayurvedic products</p>
+            <p class="text-gray-600 max-w-2xl mx-auto">Discover nature's healing power — each product just ₹199</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             ${PRODUCTS.map(p => `
@@ -471,7 +465,7 @@
                   <h3 class="text-xl font-semibold">${p.name}</h3>
                   <p class="text-sm text-gray-600 mb-2 line-clamp-2">${p.description}</p>
                   <div class="flex justify-between items-center mt-3">
-                    <span class="text-2xl font-bold text-[#6B8E23]">$${p.price.toFixed(2)}</span>
+                    <span class="text-2xl font-bold text-[#6B8E23]">₹${p.price}</span>
                     <div class="flex gap-2">
                       <button data-id="${p.id}" class="view-product-btn bg-gray-100 text-gray-800 px-3 py-2 rounded-lg text-sm hover:bg-gray-200 transition hover:scale-105">Details</button>
                       <button data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-image="${p.image}" class="add-to-cart-btn bg-[#6B8E23] text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition hover:scale-105 btn-organic">Add</button>
@@ -499,17 +493,17 @@
       });
     }
 
-    // ==================== CART PAGE ====================
+    // ==================== CART PAGE (Rupee total & ₹199 items) ====================
     function renderCartPage() {
       const cart = getCart();
       if (cart.length === 0) {
-        return `<div class="container mx-auto px-4 py-16 text-center fade-up"><svg class="h-24 w-24 mx-auto text-gray-400 mb-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6M17 13l1.5 6M9 21h6M12 18v3"></path></svg><h2 class="text-2xl font-semibold text-gray-700 mb-4">Your cart is empty</h2><a href="#" data-nav="products" class="bg-[#6B8E23] text-white px-6 py-3 rounded-full hover:scale-105 transition inline-block">Browse Products</a></div>`;
+        return `<div class="container mx-auto px-4 py-16 text-center fade-up"><svg class="h-24 w-24 mx-auto text-gray-400 mb-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6M17 13l1.5 6M9 21h6M12 18v3"></path></svg><h2 class="text-2xl font-semibold text-gray-700 mb-4">Your cart is empty</h2><a href="#" data-nav="products" class="bg-[#6B8E23] text-white px-6 py-3 rounded-full hover:scale-105 transition inline-block">Browse Products (₹199 each)</a></div>`;
       }
       const total = getCartTotal();
       const itemsHtml = cart.map(item => `
         <div class="cart-item p-4 flex flex-wrap sm:flex-nowrap items-center gap-4 border-b transition-all duration-200" data-id="${item.id}">
           <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg shadow-sm">
-          <div class="flex-grow"><h3 class="font-semibold text-lg">${item.name}</h3><p class="text-[#6B8E23] font-bold">$${item.price.toFixed(2)}</p></div>
+          <div class="flex-grow"><h3 class="font-semibold text-lg">${item.name}</h3><p class="text-[#6B8E23] font-bold">₹${item.price}</p></div>
           <div class="flex items-center space-x-2">
             <button data-id="${item.id}" data-delta="-1" class="qty-btn bg-gray-100 hover:bg-gray-200 w-8 h-8 rounded-full transition-all">−</button>
             <span class="w-8 text-center font-medium">${item.quantity}</span>
@@ -518,7 +512,7 @@
           </div>
         </div>
       `).join('');
-      return `<div class="container mx-auto px-4 py-8"><h1 class="text-3xl font-bold text-gray-800 mb-8 fade-up">Your Cart</h1><div class="grid lg:grid-cols-3 gap-8"><div class="lg:col-span-2 bg-white rounded-xl shadow-md overflow-hidden"><div class="divide-y cart-items-list">${itemsHtml}</div></div><div class="lg:col-span-1"><div class="bg-white rounded-xl shadow-md p-6 sticky top-24 transition-all hover:shadow-lg"><h2 class="text-xl font-bold mb-4">Order Summary</h2><div class="border-t border-b py-4 mb-4"><div class="flex justify-between font-bold mt-2 pt-2 border-t"><span>Total</span><span class="text-[#6B8E23] text-2xl">$${total.toFixed(2)}</span></div></div><h3 class="font-semibold mb-3">Customer Information</h3><div class="space-y-3"><input type="text" id="fullName" placeholder="Full Name *" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#6B8E23] transition"><input type="email" id="email" placeholder="Email *" class="w-full px-3 py-2 border rounded-lg"><input type="tel" id="phone" placeholder="Phone *" class="w-full px-3 py-2 border rounded-lg"><textarea id="address" rows="3" placeholder="Delivery Address *" class="w-full px-3 py-2 border rounded-lg"></textarea></div><button id="checkoutBtn" class="w-full mt-6 bg-[#6B8E23] text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition transform hover:scale-[1.02] btn-organic">Proceed to Payment 💳</button></div></div></div></div>`;
+      return `<div class="container mx-auto px-4 py-8"><h1 class="text-3xl font-bold text-gray-800 mb-8 fade-up">Your Cart (₹199 each)</h1><div class="grid lg:grid-cols-3 gap-8"><div class="lg:col-span-2 bg-white rounded-xl shadow-md overflow-hidden"><div class="divide-y cart-items-list">${itemsHtml}</div></div><div class="lg:col-span-1"><div class="bg-white rounded-xl shadow-md p-6 sticky top-24 transition-all hover:shadow-lg"><h2 class="text-xl font-bold mb-4">Order Summary</h2><div class="border-t border-b py-4 mb-4"><div class="flex justify-between font-bold mt-2 pt-2 border-t"><span>Total (INR)</span><span class="text-[#6B8E23] text-2xl">₹${total}</span></div></div><h3 class="font-semibold mb-3">Customer Information</h3><div class="space-y-3"><input type="text" id="fullName" placeholder="Full Name *" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#6B8E23] transition"><input type="email" id="email" placeholder="Email *" class="w-full px-3 py-2 border rounded-lg"><input type="tel" id="phone" placeholder="Phone *" class="w-full px-3 py-2 border rounded-lg"><textarea id="address" rows="3" placeholder="Delivery Address *" class="w-full px-3 py-2 border rounded-lg"></textarea></div><button id="checkoutBtn" class="w-full mt-6 bg-[#6B8E23] text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition transform hover:scale-[1.02] btn-organic">Proceed to Payment 💳 (₹${total})</button></div></div></div></div>`;
     }
 
     function attachCartHandlers() {
@@ -561,7 +555,20 @@
     function attachNavLinks() { document.querySelectorAll('[data-nav]').forEach(link => { link.addEventListener('click', (e) => { e.preventDefault(); const page = link.getAttribute('data-nav'); if (page !== 'success') navigateTo(page); }); }); }
 
     window.addEventListener('popstate', () => { const params = new URLSearchParams(window.location.search); const page = params.get('page'); if (page === 'product') { const id = params.get('id'); if (id) { currentPage = 'product'; currentProductId = parseInt(id); } else currentPage = 'home'; } else { currentPage = page === 'home' ? 'home' : (page || 'home'); currentProductId = null; } renderPage(); });
-    (function init() { const params = new URLSearchParams(window.location.search); const page = params.get('page'); if (page === 'product') { const id = params.get('id'); if (id) { currentPage = 'product'; currentProductId = parseInt(id); } else currentPage = 'home'; } else if (page === 'cart') currentPage = 'cart'; else if (page === 'success') currentPage = 'success'; else if (page === 'products') currentPage = 'products'; else currentPage = 'home'; renderPage(); updateCartBadge(); })();
+    
+    // Initialization: sync any existing cart prices to ₹199, then render
+    (function init() { 
+      syncCartWithProductPrices();   // ensures any old cart items update to ₹199
+      const params = new URLSearchParams(window.location.search); 
+      const page = params.get('page'); 
+      if (page === 'product') { const id = params.get('id'); if (id) { currentPage = 'product'; currentProductId = parseInt(id); } else currentPage = 'home'; } 
+      else if (page === 'cart') currentPage = 'cart'; 
+      else if (page === 'success') currentPage = 'success'; 
+      else if (page === 'products') currentPage = 'products'; 
+      else currentPage = 'home'; 
+      renderPage(); 
+      updateCartBadge(); 
+    })();
   </script>
 </body>
 </html>
